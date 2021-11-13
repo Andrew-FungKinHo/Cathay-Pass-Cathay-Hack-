@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/screens/covid/menu.dart';
+import 'package:recipe_app/screens/covid/menubar.dart';
 import 'package:recipe_app/screens/home/home_screen.dart';
 import 'package:recipe_app/screens/profile/prrofile_screen.dart';
 import 'package:recipe_app/screens/booking/flightbooking.dart';
@@ -51,7 +52,7 @@ class NavItems extends ChangeNotifier {
     NavItem(
       id: 4,
       icon: "assets/icons/camera.svg",
-      destination: MenuScreen(),
+      destination: BookScreen(),
     ),
   ];
 }

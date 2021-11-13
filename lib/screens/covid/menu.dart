@@ -80,7 +80,7 @@ class _MenuScreenState extends State<MenuScreen> {
                     fontSize: 15.0,
                   ),
                 ),
-                SizedBox(height: screenHeight * 0.03),
+                // SizedBox(height: screenHeight * 0.03),
                 // Row(
                 //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 //   children: <Widget>[
