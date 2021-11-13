@@ -7,10 +7,10 @@ class Info extends StatelessWidget {
   const Info({
     Key key,
     this.name,
-    this.email,
+    // this.email,
     this.image,
   }) : super(key: key);
-  final String name, email, image;
+  final String name, image;
 
   @override
   Widget build(BuildContext context) {
@@ -54,13 +54,6 @@ class Info extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: defaultSize / 2), //5
-                Text(
-                  email,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF8492A2),
-                  ),
-                )
               ],
             ),
           )

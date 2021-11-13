@@ -23,7 +23,7 @@ class ProfileScreen extends StatelessWidget {
       centerTitle: true,
       title: Text("Profile"),
       actions: <Widget>[
-        FlatButton(
+        TextButton(
           onPressed: () {},
           child: Text(
             "Edit",

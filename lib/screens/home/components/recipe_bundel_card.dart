@@ -21,7 +21,7 @@ class RecipeBundelCard extends StatelessWidget {
           color: recipeBundle.color,
           borderRadius: BorderRadius.circular(defaultSize * 1.8), //18
         ),
-        child: Row( 
+        child: Row(
           children: <Widget>[
             Expanded(
               child: Padding(
@@ -49,7 +49,7 @@ class RecipeBundelCard extends StatelessWidget {
                     buildInfoRow(
                       defaultSize,
                       iconSrc: "assets/icons/pot.svg",
-                      text: "${recipeBundle.recipes} Recipes",
+                      text: "${recipeBundle.startTime} Recipes",
                     ),
                     SizedBox(height: defaultSize * 0.5), //5
                     buildInfoRow(

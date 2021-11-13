@@ -12,18 +12,38 @@ class Body extends StatelessWidget {
         children: <Widget>[
           Info(
             image: "assets/images/pic.png",
-            name: "Jhon Doe",
-            email: "Jhondoe01@gmail.com",
+            name: "YouTuber Andrew",
+            // email: "youtuberaf@gmail.com",
+          ),
+          Container(
+            margin: EdgeInsets.only(left: SizeConfig.defaultSize * 2),
+            padding: EdgeInsets.symmetric(
+              horizontal: SizeConfig.defaultSize * 2, //20
+              vertical: SizeConfig.defaultSize * 0.5, //5
+            ),
+            decoration: BoxDecoration(
+              color: Colors.amber.shade50,
+              borderRadius: BorderRadius.circular(
+                SizeConfig.defaultSize * 1.6, // 16
+              ),
+            ),
+            child: Text(
+              'Luxury',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.amber,
+              ),
+            ),
           ),
           SizedBox(height: SizeConfig.defaultSize * 2), //20
           ProfileMenuItem(
-            iconSrc: "assets/icons/bookmark_fill.svg",
-            title: "Saved Recipes",
+            iconSrc: "assets/icons/search.svg",
+            title: "Preferences",
             press: () {},
           ),
           ProfileMenuItem(
-            iconSrc: "assets/icons/chef_color.svg",
-            title: "Super Plan",
+            iconSrc: "assets/icons/bookmark_fill.svg",
+            title: "Subscription Plan",
             press: () {},
           ),
           ProfileMenuItem(

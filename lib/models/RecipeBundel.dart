@@ -4,15 +4,18 @@ class RecipeBundle {
   final int id, chefs, recipes;
   final String title, description, imageSrc;
   final Color color;
+  final String startTime;
 
-  RecipeBundle(
-      {this.id,
-      this.chefs,
-      this.recipes,
-      this.title,
-      this.description,
-      this.imageSrc,
-      this.color});
+  RecipeBundle({
+    this.id,
+    this.chefs,
+    this.recipes,
+    this.title,
+    this.description,
+    this.imageSrc,
+    this.color,
+    this.startTime,
+  });
 }
 
 // Demo list
@@ -25,6 +28,7 @@ List<RecipeBundle> recipeBundles = [
     description: "New and tasty recipes every minute",
     imageSrc: "assets/images/cook_new@2x.png",
     color: Color(0xFFD82D40),
+    startTime: "8:30 AM",
   ),
   RecipeBundle(
     id: 2,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:recipe_app/constants.dart';
 import 'package:recipe_app/models/NavItem.dart';
 import 'package:recipe_app/screens/home/home_screen.dart';
 
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
       create: (context) => NavItems(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Recipe App',
+        title: 'Flightastic App',
         theme: ThemeData(
           // backgroundColor: Colors.white,
           scaffoldBackgroundColor: Colors.white,

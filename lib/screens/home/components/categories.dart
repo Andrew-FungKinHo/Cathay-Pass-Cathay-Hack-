@@ -12,7 +12,7 @@ class Categories extends StatefulWidget {
 }
 
 class _CategoriesState extends State<Categories> {
-  List<String> categories = ["All", "Indian", "Italian", "Mexican", "Chinese"];
+  List<String> categories = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"];
   // By default first one is selected
   int selectedIndex = 0;
   @override
@@ -45,11 +45,12 @@ class _CategoriesState extends State<Categories> {
           vertical: SizeConfig.defaultSize * 0.5, //5
         ),
         decoration: BoxDecoration(
-            color:
-                selectedIndex == index ? Color(0xFFEFF3EE) : Colors.transparent,
-            borderRadius: BorderRadius.circular(
-              SizeConfig.defaultSize * 1.6, // 16
-            )),
+          color:
+              selectedIndex == index ? Color(0xFFEFF3EE) : Colors.transparent,
+          borderRadius: BorderRadius.circular(
+            SizeConfig.defaultSize * 1.6, // 16
+          ),
+        ),
         child: Text(
           categories[index],
           style: TextStyle(
