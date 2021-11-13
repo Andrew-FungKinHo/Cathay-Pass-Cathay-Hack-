@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app/screens/covid/menu.dart';
 import 'package:recipe_app/screens/home/home_screen.dart';
 import 'package:recipe_app/screens/profile/prrofile_screen.dart';
 import 'package:recipe_app/screens/booking/flightbooking.dart';
+import 'package:recipe_app/screens/covid/covid19.dart';
 
 class NavItem {
   final int id;
@@ -45,6 +47,11 @@ class NavItems extends ChangeNotifier {
       id: 3,
       icon: "assets/icons/user.svg",
       destination: ProfileScreen(),
+    ),
+    NavItem(
+      id: 4,
+      icon: "assets/icons/camera.svg",
+      destination: MenuScreen(),
     ),
   ];
 }

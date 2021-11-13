@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:recipe_app/components/custom_nav_bar.dart';
 import 'package:recipe_app/components/my_bottom_nav_bar.dart';
 import 'package:recipe_app/size_config.dart';
 
@@ -7,7 +8,7 @@ class FlightBookingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(),
+      appBar: CustomAppBar(),
       backgroundColor: Colors.grey.shade200,
       body: ListView.builder(
         itemCount: 1,
@@ -313,12 +314,15 @@ class TicketView extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         color: Colors.grey)),
                 Expanded(
-                    child: Text("\u0024 240",
-                        textAlign: TextAlign.end,
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black))),
+                  child: Text(
+                    "\u0024 240",
+                    textAlign: TextAlign.end,
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  ),
+                ),
               ],
             ),
           ),
