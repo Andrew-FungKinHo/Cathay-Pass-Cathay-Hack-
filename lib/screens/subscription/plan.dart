@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 class Plan {
   String planName;
-  int price;
+  String price;
   String trips;
   String destination;
   String hotelPackage;

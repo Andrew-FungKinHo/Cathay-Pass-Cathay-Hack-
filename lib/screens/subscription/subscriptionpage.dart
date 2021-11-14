@@ -21,60 +21,55 @@ class _SubscriptionPlansState extends State<SubscriptionPage> {
             itemBuilder: (BuildContext context, int index) {
               return Container(
                 margin: EdgeInsets.all(8),
-                child: Column(
+                child: ExpansionPanelList(
+                  animationDuration: Duration(milliseconds: 1000),
+                  expandedHeaderPadding: EdgeInsets.all(0),
+                  elevation: 1,
                   children: [
-                    Text("Your current subscription"),
-                    SizedBox(height: 16,),
-                    ExpansionPanelList(
-                      animationDuration: Duration(milliseconds: 1000),
-                      expandedHeaderPadding: EdgeInsets.all(0),
-                      elevation: 1,
-                      children: [
-                        ExpansionPanel(
-                            headerBuilder: (context, isExpanded) {
-                              return Container(
-                                height: 96,
-                                padding: EdgeInsets.fromLTRB(16,12,16,16),
-                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(16)),
-                                color: subscriptionPlanList[index].color,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(subscriptionPlanList[index].planName, style: TextStyle(fontSize: 24)),
-                                    Text("${r"$"}${subscriptionPlanList[index].price}/year", style: TextStyle(fontSize: 24))
-                                  ],
-                                ),
-                              );
-                            },
-                            body: ListTile(
-                                title: Container(
-                                  //padding: EdgeInsets.fromLTRB(8,0,8,8),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(subscriptionPlanList[index].trips),
-                                      Text(subscriptionPlanList[index].destination),
-                                      Text(subscriptionPlanList[index].hotelPackage),
-                                      SizedBox(height: 8,),
-                                    ],
-                                  ),
-                                ),
-                                subtitle: TextButton(child: Text("Details"), onPressed: () {},)
+                    ExpansionPanel(
+                        headerBuilder: (context, isExpanded) {
+                          return Container(
+                            height: 96,
+                            padding: EdgeInsets.fromLTRB(16,12,16,16),
+                            decoration: BoxDecoration(color: subscriptionPlanList[index].color),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(subscriptionPlanList[index].planName, style: TextStyle(fontSize: 24)),
+                                SizedBox(height: 8,),
+                                Text("${r"$"}${subscriptionPlanList[index].price}/year", style: TextStyle(fontSize: 18))
+                              ],
                             ),
-                            isExpanded: subscriptionPlanList[index].expanded,
-                            canTapOnHeader: true
-                        )
-                      ],
-                      expansionCallback: (panelIndex, isExpanded) {
-                        setState(() {
-                          subscriptionPlanList[index].expanded = !subscriptionPlanList[index].expanded;
-                        });
-                      },
-                    ),
+                          );
+                        },
+                        body: ListTile(
+                            title: Container(
+                              //padding: EdgeInsets.fromLTRB(8,0,8,8),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: 24,),
+                                  Text(subscriptionPlanList[index].trips),
+                                  Text(subscriptionPlanList[index].destination),
+                                  Text(subscriptionPlanList[index].hotelPackage),
+                                  SizedBox(height: 8,),
+                                ],
+                              ),
+                            ),
+                            subtitle: TextButton(child: Text("View details"), onPressed: () {},)
+                        ),
+                        isExpanded: subscriptionPlanList[index].expanded,
+                        canTapOnHeader: true
+                    )
                   ],
-                )
+                  expansionCallback: (panelIndex, isExpanded) {
+                    setState(() {
+                      subscriptionPlanList[index].expanded = !subscriptionPlanList[index].expanded;
+                    });
+                  },
+                ),
               );
             }
         ),
@@ -85,7 +80,7 @@ class _SubscriptionPlansState extends State<SubscriptionPage> {
   List<Plan> subscriptionPlanList = <Plan>[
     Plan(
       planName: 'Basic',
-      price: 9000,
+      price: '9,000',
       trips: '3-day trips x 3',
       destination: 'Basic Asian destinations',
       hotelPackage: 'Basic hotel package',
@@ -93,7 +88,7 @@ class _SubscriptionPlansState extends State<SubscriptionPage> {
     ),
     Plan(
         planName: 'Luxury',
-        price: 11040,
+        price: '11,040',
         trips: '3-day trips x 3',
         destination: 'Popular Asian destinations',
         hotelPackage: '5-star hotel package',
@@ -101,7 +96,7 @@ class _SubscriptionPlansState extends State<SubscriptionPage> {
     ),
     Plan(
         planName: 'Business',
-        price: 19200,
+        price: '19,200',
         trips: '4-day trips x 4',
         destination: 'Business destinations',
         hotelPackage: '5-star hotel package',
