@@ -3,6 +3,7 @@ import 'package:recipe_app/components/custom_nav_bar.dart';
 import 'package:recipe_app/components/my_bottom_nav_bar.dart';
 import 'package:recipe_app/constants.dart';
 import 'package:recipe_app/screens/subscription/plan.dart';
+import 'package:recipe_app/widgets/notifications.dart';
 
 class SubscriptionPage extends StatefulWidget {
   const SubscriptionPage({Key key}) : super(key: key);
@@ -24,7 +25,10 @@ class _SubscriptionPlansState extends State<SubscriptionPage> {
           IconButton(
             icon: const Icon(Icons.notifications_none),
             iconSize: 28.0,
-            onPressed: () {},
+            onPressed: () {
+
+              showDialog(context: context, builder: (context) => NotificationsPopUp());
+            },
           ),
         ],
       ),

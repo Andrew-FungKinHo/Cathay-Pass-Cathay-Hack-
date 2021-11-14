@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/constants.dart';
+import 'package:recipe_app/widgets/notifications.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
@@ -11,7 +12,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
         IconButton(
           icon: const Icon(Icons.notifications_none),
           iconSize: 28.0,
-          onPressed: () {},
+          onPressed: () {
+            showDialog(context: context, builder: (context) => NotificationsPopUp());
+          },
         ),
       ],
     );
