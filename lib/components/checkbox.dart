@@ -25,12 +25,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     }
 
     return Checkbox(
-      checkColor: Colors.white,
-      fillColor: MaterialStateProperty.resolveWith(getColor),
-      value: isChecked,
-      onChanged: (bool? value) {
+      value: this.isChecked,
+      onChanged: (bool value) {
         setState(() {
-          isChecked = value!;
+          this.isChecked = value;
         });
       },
     );

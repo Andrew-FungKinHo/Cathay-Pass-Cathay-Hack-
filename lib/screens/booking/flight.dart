@@ -59,7 +59,7 @@ class _BookScreenState extends State<BookScreen> {
               children: <Widget>[
                 // SizedBox(height: screenHeight * 0.01),
                 Text(
-                  '1 Adult           Economy          Nov 18 - Nov 24',
+                  '1 Adult                     Nov 18 - Nov 24',
                   style: const TextStyle(
                     color: Colors.white70,
                     fontSize: 15.0,
@@ -276,6 +276,10 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                               fontWeight: FontWeight.bold,
                               color: Colors.black),
                         ),
+                        Text(
+                          " (Economy)",
+                          style: TextStyle(fontSize: 12, color: Colors.grey),
+                        ),
                       ],
                     ),
                   ],
@@ -424,7 +428,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
               color: Colors.white,
             ),
             label: Text(
-              'SELECT',
+              'CONFIRM',
               style: TextStyle(
                 fontSize: 16.0,
                 fontWeight: FontWeight.w600,
