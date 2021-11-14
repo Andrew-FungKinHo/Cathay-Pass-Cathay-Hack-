@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/components/custom_nav_bar.dart';
+import 'package:recipe_app/components/my_bottom_nav_bar.dart';
 import 'package:recipe_app/screens/subscription/plan.dart';
 
 class SubscriptionPage extends StatefulWidget {
@@ -30,15 +31,21 @@ class _SubscriptionPlansState extends State<SubscriptionPage> {
                         headerBuilder: (context, isExpanded) {
                           return Container(
                             height: 96,
-                            padding: EdgeInsets.fromLTRB(16,12,16,16),
-                            decoration: BoxDecoration(color: subscriptionPlanList[index].color),
+                            padding: EdgeInsets.fromLTRB(16, 12, 16, 16),
+                            decoration: BoxDecoration(
+                                color: subscriptionPlanList[index].color),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(subscriptionPlanList[index].planName, style: TextStyle(fontSize: 24)),
-                                SizedBox(height: 8,),
-                                Text("${r"$"}${subscriptionPlanList[index].price}/year", style: TextStyle(fontSize: 18))
+                                Text(subscriptionPlanList[index].planName,
+                                    style: TextStyle(fontSize: 24)),
+                                SizedBox(
+                                  height: 8,
+                                ),
+                                Text(
+                                    "${r"$"}${subscriptionPlanList[index].price}/year",
+                                    style: TextStyle(fontSize: 18))
                               ],
                             ),
                           );
@@ -50,57 +57,61 @@ class _SubscriptionPlansState extends State<SubscriptionPage> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(height: 24,),
+                                  SizedBox(
+                                    height: 24,
+                                  ),
                                   Text(subscriptionPlanList[index].trips),
                                   Text(subscriptionPlanList[index].destination),
-                                  Text(subscriptionPlanList[index].hotelPackage),
-                                  SizedBox(height: 8,),
+                                  Text(
+                                      subscriptionPlanList[index].hotelPackage),
+                                  SizedBox(
+                                    height: 8,
+                                  ),
                                 ],
                               ),
                             ),
-                            subtitle: TextButton(child: Text("View details"), onPressed: () {},)
-                        ),
+                            subtitle: TextButton(
+                              child: Text("View details"),
+                              onPressed: () {},
+                            )),
                         isExpanded: subscriptionPlanList[index].expanded,
-                        canTapOnHeader: true
-                    )
+                        canTapOnHeader: true)
                   ],
                   expansionCallback: (panelIndex, isExpanded) {
                     setState(() {
-                      subscriptionPlanList[index].expanded = !subscriptionPlanList[index].expanded;
+                      subscriptionPlanList[index].expanded =
+                          !subscriptionPlanList[index].expanded;
                     });
                   },
                 ),
               );
-            }
-        ),
+            }),
       ),
+      bottomNavigationBar: MyBottomNavBar(),
     );
   }
 
   List<Plan> subscriptionPlanList = <Plan>[
     Plan(
-      planName: 'Basic',
-      price: '9,000',
-      trips: '3-day trips x 3',
-      destination: 'Basic Asian destinations',
-      hotelPackage: 'Basic hotel package',
-      color: Color(0xFFDFD4C0)
-    ),
+        planName: 'Basic',
+        price: '9,000',
+        trips: '3-day trips x 3',
+        destination: 'Basic Asian destinations',
+        hotelPackage: 'Basic hotel package',
+        color: Color(0xFFDFD4C0)),
     Plan(
         planName: 'Luxury',
         price: '11,040',
         trips: '3-day trips x 3',
         destination: 'Popular Asian destinations',
         hotelPackage: '5-star hotel package',
-        color: Color(0xFF9BC1BC)
-    ),
+        color: Color(0xFF9BC1BC)),
     Plan(
         planName: 'Business',
         price: '19,200',
         trips: '4-day trips x 4',
         destination: 'Business destinations',
         hotelPackage: '5-star hotel package',
-        color: Color(0xFF9BC1BC)
-    ),
+        color: Color(0xFF9BC1BC)),
   ];
 }
