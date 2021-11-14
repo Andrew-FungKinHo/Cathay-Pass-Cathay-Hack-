@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:recipe_app/components/custom_nav_bar.dart';
 import 'package:recipe_app/components/my_bottom_nav_bar.dart';
 import 'package:recipe_app/constants.dart';
+import 'package:recipe_app/screens/booking/flight.dart';
 import 'package:recipe_app/size_config.dart';
 import 'package:recipe_app/widgets/country_dropdown.dart';
 
@@ -82,12 +83,22 @@ class _MenuScreenState extends State<MenuScreen> {
             Container(
               padding: EdgeInsets.all(16),
               width: SizeConfig.screenWidth*0.9,
-                height: 160,
+                height: 180,
                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(16), color: AppColors.lightSlate, ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Plan trip 1', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Plan trip 1', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),),
+                        TextButton(
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => BookScreen()));
+                            },
+                            child: Icon(Icons.edit))
+                      ],
+                    ),
                     SizedBox(height: 16,),
                     Row(
                       children: [
@@ -114,7 +125,123 @@ class _MenuScreenState extends State<MenuScreen> {
                                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(16), color: Colors.white, ),
                               child: Row(
                                 children: [
-                                  Text('13/11/21 - 24/11/21'),
+                                  Text('13/11 - 24/11'),
+                                  Container(width: 36, height: 40, child: IconButton(onPressed: () {}, icon: Icon(Icons.calendar_today))),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                )
+            ),
+            SizedBox(height: 16,),
+            Container(
+              padding: EdgeInsets.all(16),
+              width: SizeConfig.screenWidth*0.9,
+                height: 180,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(16), color: AppColors.lightSlate, ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Plan trip 2', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),),
+                        TextButton(
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => BookScreen()));
+                            },
+                            child: Icon(Icons.edit))
+                      ],
+                    ),
+                    SizedBox(height: 16,),
+                    Row(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Destination'),
+                            SizedBox(height: 8,),
+                            CountryDropdown(
+                              countries: ['CN', 'FR', 'IN', 'IT', 'UK', 'USA'],
+                              country: _country,
+                              onChanged: (val) => setState(() => _country = val),
+                            ),
+                          ],
+                        ),
+                        SizedBox(width: 16,),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Date'),
+                            SizedBox(height: 8,),
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 16),
+                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(16), color: Colors.white, ),
+                              child: Row(
+                                children: [
+                                  Text('13/11 - 24/11'),
+                                  Container(width: 36, height: 40, child: IconButton(onPressed: () {}, icon: Icon(Icons.calendar_today))),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                )
+            ),
+            SizedBox(height: 16,),
+            Container(
+              padding: EdgeInsets.all(16),
+              width: SizeConfig.screenWidth*0.9,
+                height: 180,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(16), color: AppColors.lightSlate, ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Plan trip 1', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),),
+                        TextButton(
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => BookScreen()));
+                            },
+                            child: Icon(Icons.edit))
+                      ],
+                    ),
+                    SizedBox(height: 16,),
+                    Row(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Destination'),
+                            SizedBox(height: 8,),
+                            CountryDropdown(
+                              countries: ['CN', 'FR', 'IN', 'IT', 'UK', 'USA'],
+                              country: _country,
+                              onChanged: (val) => setState(() => _country = val),
+                            ),
+                          ],
+                        ),
+                        SizedBox(width: 16,),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Date'),
+                            SizedBox(height: 8,),
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 16),
+                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(16), color: Colors.white, ),
+                              child: Row(
+                                children: [
+                                  Text('13/11 - 24/11'),
                                   Container(width: 36, height: 40, child: IconButton(onPressed: () {}, icon: Icon(Icons.calendar_today))),
                                 ],
                               ),
