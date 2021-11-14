@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app/screens/subscription/subscriptionpage.dart';
 import 'package:recipe_app/size_config.dart';
 
 import 'info.dart';
@@ -44,7 +45,11 @@ class Body extends StatelessWidget {
           ProfileMenuItem(
             iconSrc: "assets/icons/bookmark_fill.svg",
             title: "Subscription Plan",
-            press: () {},
+            press: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) => SubscriptionPage(),)
+              );
+            },
           ),
           ProfileMenuItem(
             iconSrc: "assets/icons/language.svg",
