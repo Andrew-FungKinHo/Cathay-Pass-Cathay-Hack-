@@ -14,6 +14,7 @@ class AppColors {
   static const grey  = Color(0xFF86878B);
   static const slate  = Color(0xFFC4C5C7);
   static const lightSlate  = Color(0xFFECECEC);
+  static const dark  = Color(0xFF3E3E3E);
 
   static MaterialColor primarySwatch = createMaterialColor(kPrimaryColor);
 

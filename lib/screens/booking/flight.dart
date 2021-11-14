@@ -61,6 +61,7 @@ class _BookScreenState extends State<BookScreen> {
                 // SizedBox(height: screenHeight * 0.01),
                 Row(
                   children: [
+                    SizedBox(width: 8,),
                     Text(
                       '1 Adult',
                       style: const TextStyle(
@@ -68,20 +69,21 @@ class _BookScreenState extends State<BookScreen> {
                         fontSize: 18.0,
                       ),
                     ),
-                    FloatingActionButton(
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
-                      mini: true,
-                      onPressed: () {},
-                      child: Icon(Icons.add),
-                    ),
+                    SizedBox(width: 12,),
+                    Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(color: AppColors.grey.withOpacity(0.5), borderRadius: BorderRadius.circular(4)),
+                      child: Center(child: IconButton(onPressed: () {}, icon: Icon(Icons.add, color: Colors.white54, size: 16,))),),
+                    Expanded(child: SizedBox(width: 32,)),
                     Text(
-                      '                 Nov 18 - Nov 24',
+                      '       Nov 18 - Nov 24',
                       style: const TextStyle(
                         color: Colors.white70,
                         fontSize: 18.0,
                       ),
                     ),
+                    SizedBox(width: 16,)
                   ],
                 )
               ],
@@ -101,14 +103,18 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Text(
-            'Recommended for you',
-            style: const TextStyle(
-              fontSize: 15.0,
-              fontWeight: FontWeight.w600,
+          SizedBox(height: 16,),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'Recommended for you:',
+              style: const TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
-          SizedBox(height: screenHeight * 0.01),
+          SizedBox(height: 16),
           Container(
             padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
@@ -136,8 +142,8 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                         "Flight",
                         style: TextStyle(
                           fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.grey,
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.dark,
                         ),
                       ),
                     ],
@@ -150,7 +156,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.indigo),
+                          color: AppColors.kPrimaryColor),
                     ),
                     SizedBox(
                       width: 16,
@@ -165,7 +171,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                         width: 8,
                         child: DecoratedBox(
                           decoration: BoxDecoration(
-                              color: Colors.indigo.shade400,
+                              color: AppColors.kTextLigntColor,
                               borderRadius: BorderRadius.circular(5)),
                         ),
                       ),
@@ -205,7 +211,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                               angle: 1.5,
                               child: Icon(
                                 Icons.local_airport,
-                                color: Colors.indigo.shade300,
+                                color: AppColors.premiumEconClassColor,
                                 size: 24,
                               ),
                             ))
@@ -216,14 +222,14 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                     Container(
                       padding: EdgeInsets.all(6),
                       decoration: BoxDecoration(
-                          color: Colors.pink.shade50,
+                          color: Colors.indigo.shade50,
                           borderRadius: BorderRadius.circular(20)),
                       child: SizedBox(
                         height: 8,
                         width: 8,
                         child: DecoratedBox(
                           decoration: BoxDecoration(
-                              color: Colors.pink.shade400,
+                              color: AppColors.kTextLigntColor,
                               borderRadius: BorderRadius.circular(5)),
                         ),
                       ),
@@ -236,7 +242,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.pink),
+                          color: AppColors.kPrimaryColor),
                     )
                   ],
                 ),
@@ -257,7 +263,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                       style: TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black),
+                          color: AppColors.dark),
                     ),
                     SizedBox(
                         width: 100,
@@ -278,14 +284,14 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                       "08:00 AM",
                       style: TextStyle(
                           fontSize: 18,
-                          color: Colors.black,
+                          color: AppColors.dark,
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
                       "02:30 PM",
                       style: TextStyle(
                           fontSize: 18,
-                          color: Colors.black,
+                          color: AppColors.dark,
                           fontWeight: FontWeight.bold),
                     ),
                   ],
@@ -309,7 +315,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                           style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black),
+                              color: AppColors.dark),
                         ),
                         Text(
                           " (Economy)",
@@ -392,7 +398,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: AppColors.dark,
                     ),
                   ),
                 ),
@@ -403,7 +409,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: AppColors.dark,
                     ),
                   ),
                 ),
@@ -425,20 +431,20 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                     Container(
                       padding: EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        color: Colors.amber.shade50,
+                        color: AppColors.lightSand.withOpacity(0.3),
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: Icon(Icons.hotel, color: Colors.amber),
+                      child: Icon(Icons.hotel, color: AppColors.darkSandColor),
                     ),
                     SizedBox(
                       width: 10,
                     ),
                     Text(
-                      "hotel",
+                      "Hotel",
                       style: TextStyle(
                         fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.grey,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.dark,
                       ),
                     ),
                   ],
@@ -454,7 +460,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(left: 16, right: 16, bottom: 12),
+            padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -469,7 +475,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: AppColors.dark,
                     ),
                   ),
                 ),
@@ -480,7 +486,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: AppColors.dark,
                     ),
                   ),
                 ),
@@ -494,9 +500,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
             padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(24),
-                    topRight: Radius.circular(24))),
+                borderRadius: BorderRadius.circular(24)),
             child: Column(
               children: <Widget>[
                 Row(
@@ -504,10 +508,10 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                     Container(
                       padding: EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        color: Colors.blue.shade50,
+                        color: AppColors.premiumEconClassColor.withOpacity(0.3),
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: Icon(Icons.health_and_safety, color: Colors.blue),
+                      child: Icon(Icons.health_and_safety, color: AppColors.businessClassColor),
                     ),
                     SizedBox(
                       width: 10,
@@ -516,8 +520,8 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                       "Insurance",
                       style: TextStyle(
                         fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.grey,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.dark,
                       ),
                     ),
                   ],
@@ -529,25 +533,26 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                       "Your trip is protected by CHUBB",
                       style: TextStyle(
                           fontSize: 15,
-                          color: Colors.black,
+                          color: AppColors.dark,
                           fontWeight: FontWeight.bold),
                     ),
                     MyStatefulWidget(),
                   ],
                 ),
+                TextButton(child: Text('or Change a plan'), onPressed: () {},)
               ],
             ),
           ),
           SizedBox(height: screenHeight * 0.02),
           FlatButton.icon(
             padding: const EdgeInsets.symmetric(
-              vertical: 10.0,
-              horizontal: 20.0,
+              vertical: 12.0,
+              horizontal: 18.0,
             ),
             onPressed: () {},
-            color: Colors.red,
+            color: AppColors.kPrimaryColor,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.0),
+              borderRadius: BorderRadius.circular(16.0),
             ),
             icon: const Icon(
               Icons.airplane_ticket,

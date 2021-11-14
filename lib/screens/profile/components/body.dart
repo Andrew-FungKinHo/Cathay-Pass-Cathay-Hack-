@@ -18,6 +18,7 @@ class Body extends StatelessWidget {
             // email: "youtuberaf@gmail.com",
           ),
           Container(
+            margin: EdgeInsets.only(left: SizeConfig.defaultSize * 2),
             padding: EdgeInsets.symmetric(
               horizontal: SizeConfig.defaultSize * 2, //20
               vertical: SizeConfig.defaultSize * 0.5, //5

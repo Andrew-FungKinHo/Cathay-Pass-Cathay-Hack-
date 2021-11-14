@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app/screens/reselect/reselectpage.dart';
 import 'package:recipe_app/size_config.dart';
 
 class NotificationsPopUp extends StatelessWidget {
@@ -40,21 +41,26 @@ class NotificationsPopUp extends StatelessWidget {
               ),
             ),
             SizedBox(height: 8,),
-            Container(
-              width: SizeConfig.screenWidth*0.8-32,
-              padding: EdgeInsets.symmetric(vertical: 16),
-              decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.8),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Row(
-                children: [
-                  SizedBox(width: 16,),
-                  Icon(Icons.warning_rounded, color: Color(0xFFFD2F22),),
-                  SizedBox(width: 16,),
-                  Flexible(child: Text('Your travel plan has been rescheduled due to a flight delay. Please confirm changes.' , maxLines: 4, overflow: TextOverflow.ellipsis,)),
-                  SizedBox(width: 8,)
-                ],
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ReselectPage()));
+              },
+              child: Container(
+                width: SizeConfig.screenWidth*0.8-32,
+                padding: EdgeInsets.symmetric(vertical: 16),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.8),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Row(
+                  children: [
+                    SizedBox(width: 16,),
+                    Icon(Icons.warning_rounded, color: Color(0xFFFD2F22),),
+                    SizedBox(width: 16,),
+                    Flexible(child: Text('Your travel plan has been rescheduled due to a flight delay. Please confirm changes.' , maxLines: 4, overflow: TextOverflow.ellipsis,)),
+                    SizedBox(width: 8,)
+                  ],
+                ),
               ),
             ),
             Expanded(child: SizedBox(height: 64,)),
