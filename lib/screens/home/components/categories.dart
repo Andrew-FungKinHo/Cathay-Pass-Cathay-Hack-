@@ -35,6 +35,7 @@ class _CategoriesState extends State<Categories> {
       onTap: () {
         setState(() {
           selectedIndex = index;
+          print('Hello World!');
         });
       },
       child: Container(
@@ -55,7 +56,9 @@ class _CategoriesState extends State<Categories> {
           categories[index],
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: selectedIndex == index ? AppColors.kPrimaryColor : Color(0xFFC2C2B5),
+            color: selectedIndex == index
+                ? AppColors.kPrimaryColor
+                : Color(0xFFC2C2B5),
           ),
         ),
       ),

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/models/RecipeBundel.dart';
-import 'package:recipe_app/size_config.dart';
-
+import 'package:recipe_app/components/dayone.dart';
 import 'categories.dart';
-import 'recipe_bundel_card.dart';
+import 'package:timeline_tile/timeline_tile.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -12,6 +11,13 @@ class Body extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Categories(),
+          Column(
+            children: <Widget>[
+              DayOneScreen(),
+            ],
+          ),
+
+          /*
           Expanded(
             child: Padding(
               padding:
@@ -34,7 +40,7 @@ class Body extends StatelessWidget {
                 ),
               ),
             ),
-          ),
+          ),*/
         ],
       ),
     );

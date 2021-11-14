@@ -46,13 +46,13 @@ class NavItems extends ChangeNotifier {
     ),
     NavItem(
       id: 3,
-      icon: "assets/icons/user.svg",
-      destination: ProfileScreen(),
+      icon: "assets/icons/camera.svg",
+      destination: BookScreen(),
     ),
     NavItem(
       id: 4,
-      icon: "assets/icons/camera.svg",
-      destination: BookScreen(),
+      icon: "assets/icons/user.svg",
+      destination: ProfileScreen(),
     ),
   ];
 }
