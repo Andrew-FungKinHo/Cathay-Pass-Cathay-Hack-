@@ -37,12 +37,12 @@ class NavItems extends ChangeNotifier {
     NavItem(
       id: 1,
       icon: "assets/icons/home.svg",
-      destination: HomeScreen(),
+      destination: MenuScreen(),
     ),
     NavItem(
       id: 2,
       icon: "assets/icons/list.svg",
-      destination: MenuScreen(),
+      destination: HomeScreen(),
     ),
     NavItem(
       id: 3,

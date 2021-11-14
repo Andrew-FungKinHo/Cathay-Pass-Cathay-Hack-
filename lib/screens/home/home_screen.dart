@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:recipe_app/components/my_bottom_nav_bar.dart';
 import 'package:recipe_app/constants.dart';
 import 'package:recipe_app/screens/home/components/body1.dart';
+import 'package:recipe_app/screens/home/components/tabbar.dart';
 import 'package:recipe_app/size_config.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,7 +12,9 @@ class HomeScreen extends StatelessWidget {
     SizeConfig().init(context);
     return Scaffold(
       appBar: buildAppBar(),
-      body: Body(),
+      body: TabBarDemo(),
+      // Body(),
+
       // We are not able to BottomNavigationBar because the icon parameter dont except SVG
       // We also use Provied to manage the state of our Nav
       bottomNavigationBar: MyBottomNavBar(),
@@ -36,7 +39,7 @@ class HomeScreen extends StatelessWidget {
       actions: <Widget>[
         IconButton(
           icon: Icon(
-            Icons.notifications,
+            Icons.refresh,
             color: AppColors.kPrimaryColor,
           ),
           onPressed: () {},

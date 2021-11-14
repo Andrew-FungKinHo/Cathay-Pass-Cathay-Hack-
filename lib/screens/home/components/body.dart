@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/components/dayone.dart';
+import 'package:recipe_app/components/daytwo.dart';
 import 'categories.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Body extends StatelessWidget {
+  int selectedIndex = 1;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -13,7 +15,7 @@ class Body extends StatelessWidget {
           Categories(),
           Column(
             children: <Widget>[
-              DayOneScreen(),
+              selectedIndex == 1 ? DayOneScreen() : DayTwoScreen(),
             ],
           ),
 

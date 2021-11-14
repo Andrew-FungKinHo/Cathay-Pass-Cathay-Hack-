@@ -3,12 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/constants.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
-class DayOneScreen extends StatefulWidget {
+class DayTwoScreen extends StatefulWidget {
   @override
-  _DayOneScreenState createState() => _DayOneScreenState();
+  _DayTwoScreenState createState() => _DayTwoScreenState();
 }
 
-class _DayOneScreenState extends State<DayOneScreen> {
+class _DayTwoScreenState extends State<DayTwoScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,7 +35,7 @@ class _DayOneScreenState extends State<DayOneScreen> {
                     alignment: Alignment.center,
                     child: Center(
                       child: Text(
-                        "Flight",
+                        "Golden Gate Bridge",
                         style: TextStyle(
                           color: AppColors.kPrimaryColor,
                           fontWeight: FontWeight.bold,
@@ -45,7 +45,7 @@ class _DayOneScreenState extends State<DayOneScreen> {
                     ),
                   ),
                   Text(
-                    "Date: 14 Nov 2021\nTime: 08:00 - 11:00",
+                    "Date: 15 Nov 2021\nTime: 08:00 - 11:00",
                   ),
                 ],
               ),
@@ -69,9 +69,9 @@ class _DayOneScreenState extends State<DayOneScreen> {
                     alignment: Alignment.center,
                     child: Center(
                       child: Text(
-                        "Hotel",
+                        "Carnival by the Harbour",
                         style: TextStyle(
-                          color: AppColors.firstClassColor,
+                          color: AppColors.premiumEconClassColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                         ),
@@ -79,9 +79,8 @@ class _DayOneScreenState extends State<DayOneScreen> {
                     ),
                   ),
                   Text(
-                    "Date: 14 Nov 2021\nTime: 12:00 - 13:00",
+                    "Date: 15 Nov 2021\nTime: 12:00 - 13:00",
                   ),
-                  Container(height: 25),
                 ],
               ),
             ),
@@ -106,7 +105,7 @@ class _DayOneScreenState extends State<DayOneScreen> {
                       child: Text(
                         "Disneyland",
                         style: TextStyle(
-                          color: AppColors.businessClassColor,
+                          color: AppColors.darkSandColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                         ),
@@ -114,9 +113,8 @@ class _DayOneScreenState extends State<DayOneScreen> {
                     ),
                   ),
                   Text(
-                    "Date: 14 Nov 2021\nTime: 14:00 - 20:00",
+                    "Date: 15 Nov 2021\nTime: 15:00 - 20:00",
                   ),
-                  Container(height: 25),
                 ],
               ),
             ),
@@ -149,9 +147,8 @@ class _DayOneScreenState extends State<DayOneScreen> {
                     ),
                   ),
                   Text(
-                    "Date: 14 Nov 2021\nTime: 21:00 - 00:00",
+                    "Date: 15 Nov 2021\nTime: 21:00 - 00:00",
                   ),
-                  Container(height: 25),
                 ],
               ),
             ),
