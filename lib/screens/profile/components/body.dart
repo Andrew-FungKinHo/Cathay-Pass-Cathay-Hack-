@@ -38,7 +38,7 @@ class Body extends StatelessWidget {
           ),
           SizedBox(height: SizeConfig.defaultSize * 2), //20
           ProfileMenuItem(
-            iconSrc: "assets/icons/search.svg",
+            iconSrc: "assets/icons/chef_nav.svg",
             title: "Preferences",
             press: () {},
           ),
@@ -46,8 +46,11 @@ class Body extends StatelessWidget {
             iconSrc: "assets/icons/bookmark_fill.svg",
             title: "Subscription Plan",
             press: () {
-              Navigator.push(context, MaterialPageRoute(
-                builder: (context) => SubscriptionPage(),)
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SubscriptionPage(),
+                ),
               );
             },
           ),
