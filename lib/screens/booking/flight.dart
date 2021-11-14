@@ -1,31 +1,81 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recipe_app/components/custom_nav_bar.dart';
 import 'package:recipe_app/components/my_bottom_nav_bar.dart';
-import 'package:recipe_app/size_config.dart';
 
-class FlightBookingPage extends StatelessWidget {
+class BookScreen extends StatefulWidget {
+  @override
+  _BookScreenState createState() => _BookScreenState();
+}
+
+class _BookScreenState extends State<BookScreen> {
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: CustomAppBar(),
       backgroundColor: Colors.grey.shade200,
-      body: ListView.builder(
-        itemCount: 1,
-        padding: EdgeInsets.only(top: 8, bottom: 8),
-        itemBuilder: (context, index) {
-          return TicketView();
-        },
+      body: CustomScrollView(
+        physics: ClampingScrollPhysics(),
+        slivers: <Widget>[
+          _buildHeader(screenHeight),
+          _buildTicket(screenHeight),
+        ],
       ),
       bottomNavigationBar: MyBottomNavBar(),
     );
   }
+
+  SliverToBoxAdapter _buildHeader(double screenHeight) {
+    return SliverToBoxAdapter(
+      child: Container(
+        padding: const EdgeInsets.all(20.0),
+        decoration: BoxDecoration(
+          color: Color(0xFF473F97),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(40.0),
+            bottomRight: Radius.circular(40.0),
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  'HKG → USA',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: screenHeight * 0.03),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                // SizedBox(height: screenHeight * 0.01),
+                Text(
+                  '1 Adult           Economy          Nov 18 - Nov 24',
+                  style: const TextStyle(
+                    color: Colors.white70,
+                    fontSize: 15.0,
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
 }
 
-class TicketView extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
+SliverToBoxAdapter _buildTicket(double screenHeight) {
+  return SliverToBoxAdapter(
+    child: Padding(
       padding: EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -37,7 +87,7 @@ class TicketView extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-          SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+          SizedBox(height: screenHeight * 0.01),
           Container(
             padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
@@ -166,7 +216,7 @@ class TicketView extends StatelessWidget {
                     SizedBox(
                         width: 100,
                         child: Text(
-                          "SanFransisco",
+                          "San Fransisco",
                           textAlign: TextAlign.end,
                           style: TextStyle(fontSize: 12, color: Colors.grey),
                         )),
@@ -315,7 +365,7 @@ class TicketView extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+          SizedBox(height: screenHeight * 0.02),
           FlatButton.icon(
             padding: const EdgeInsets.symmetric(
               vertical: 10.0,
@@ -341,6 +391,6 @@ class TicketView extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
+    ),
+  );
 }

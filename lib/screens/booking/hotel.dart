@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/components/custom_nav_bar.dart';
 import 'package:recipe_app/components/my_bottom_nav_bar.dart';
-import 'package:recipe_app/widgets/country_dropdown.dart';
 
-class BookScreen extends StatefulWidget {
+class HotelBookScreen extends StatefulWidget {
   @override
-  _BookScreenState createState() => _BookScreenState();
+  _HotelBookScreenState createState() => _HotelBookScreenState();
 }
 
-class _BookScreenState extends State<BookScreen> {
+class _HotelBookScreenState extends State<HotelBookScreen> {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: CustomAppBar(),
+      backgroundColor: Colors.grey.shade200,
       body: CustomScrollView(
         physics: ClampingScrollPhysics(),
         slivers: <Widget>[
           _buildHeader(screenHeight),
           _buildTicket(screenHeight),
-          // _buildPreventionTips(screenHeight),
-          // _buildYourOwnTest(screenHeight),
         ],
       ),
       bottomNavigationBar: MyBottomNavBar(),
@@ -45,7 +43,7 @@ class _BookScreenState extends State<BookScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  'HKG -> USA',
+                  'Book your stay',
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 25.0,
@@ -60,7 +58,7 @@ class _BookScreenState extends State<BookScreen> {
               children: <Widget>[
                 // SizedBox(height: screenHeight * 0.01),
                 Text(
-                  '1 Adult       Economy          Nov 18 - Nov 24',
+                  "We've got you covered!",
                   style: const TextStyle(
                     color: Colors.white70,
                     fontSize: 15.0,
@@ -89,7 +87,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
               fontWeight: FontWeight.w600,
             ),
           ),
-          SizedBox(height: screenHeight * 0.02),
+          SizedBox(height: screenHeight * 0.01),
           Container(
             padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
@@ -218,7 +216,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                     SizedBox(
                         width: 100,
                         child: Text(
-                          "SanFransisco",
+                          "San Fransisco",
                           textAlign: TextAlign.end,
                           style: TextStyle(fontSize: 12, color: Colors.grey),
                         )),
