@@ -23,7 +23,7 @@ class Info extends StatelessWidget {
             clipper: CustomShape(),
             child: Container(
               height: defaultSize * 15, //150
-              color: kPrimaryColor,
+              color: AppColors.kPrimaryColor,
             ),
           ),
           Center(
@@ -50,7 +50,7 @@ class Info extends StatelessWidget {
                   name,
                   style: TextStyle(
                     fontSize: defaultSize * 2.2, // 22
-                    color: kTextColor,
+                    color: AppColors.kTextColor,
                   ),
                 ),
                 SizedBox(height: defaultSize / 2), //5

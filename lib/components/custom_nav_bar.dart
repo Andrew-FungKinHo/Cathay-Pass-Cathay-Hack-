@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app/constants.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Color(0xFF473F97),
+      backgroundColor: AppColors.kPrimaryColor,
       elevation: 0.0,
       actions: <Widget>[
         IconButton(

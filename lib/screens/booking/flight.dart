@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:recipe_app/components/checkbox.dart';
 import 'package:recipe_app/components/custom_nav_bar.dart';
 import 'package:recipe_app/components/my_bottom_nav_bar.dart';
+import 'package:recipe_app/constants.dart';
 
 class BookScreen extends StatefulWidget {
   @override
@@ -31,7 +32,7 @@ class _BookScreenState extends State<BookScreen> {
       child: Container(
         padding: const EdgeInsets.all(20.0),
         decoration: BoxDecoration(
-          color: Color(0xFF473F97),
+          color: AppColors.kPrimaryColor,
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(40.0),
             bottomRight: Radius.circular(40.0),

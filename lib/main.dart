@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:recipe_app/constants.dart';
 import 'package:recipe_app/models/NavItem.dart';
 import 'package:recipe_app/screens/home/home_screen.dart';
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           // backgroundColor: Colors.white,
           scaffoldBackgroundColor: Colors.white,
+          primarySwatch: AppColors.primarySwatch,
           // We apply this to our appBarTheme because most of our appBar have this style
           appBarTheme: AppBarTheme(color: Colors.white, elevation: 0),
           visualDensity: VisualDensity.adaptivePlatformDensity,

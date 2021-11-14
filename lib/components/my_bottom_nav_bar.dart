@@ -62,7 +62,7 @@ class MyBottomNavBar extends StatelessWidget {
     return IconButton(
       icon: SvgPicture.asset(
         icon,
-        color: isActive ? kPrimaryColor : Color(0xFFD1D4D4),
+        color: isActive ? AppColors.kPrimaryColor : Color(0xFFD1D4D4),
         height: 22,
       ),
       onPressed: press,

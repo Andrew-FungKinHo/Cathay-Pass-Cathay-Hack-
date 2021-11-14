@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/components/custom_nav_bar.dart';
 import 'package:recipe_app/components/my_bottom_nav_bar.dart';
+import 'package:recipe_app/constants.dart';
 import 'package:recipe_app/widgets/country_dropdown.dart';
 
 class MenuScreen extends StatefulWidget {
@@ -33,7 +34,7 @@ class _MenuScreenState extends State<MenuScreen> {
       child: Container(
         padding: const EdgeInsets.all(20.0),
         decoration: BoxDecoration(
-          color: Color(0xFF473F97),
+          color: AppColors.kPrimaryColor,
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(40.0),
             bottomRight: Radius.circular(40.0),

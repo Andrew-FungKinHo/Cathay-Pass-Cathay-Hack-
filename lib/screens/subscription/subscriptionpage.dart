@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/components/custom_nav_bar.dart';
 import 'package:recipe_app/components/my_bottom_nav_bar.dart';
+import 'package:recipe_app/constants.dart';
 import 'package:recipe_app/screens/subscription/plan.dart';
 
 class SubscriptionPage extends StatefulWidget {
@@ -98,20 +99,20 @@ class _SubscriptionPlansState extends State<SubscriptionPage> {
         trips: '3-day trips x 3',
         destination: 'Basic Asian destinations',
         hotelPackage: 'Basic hotel package',
-        color: Color(0xFFDFD4C0)),
+        color: AppColors.kPrimaryColor),
     Plan(
         planName: 'Luxury',
         price: '11,040',
         trips: '3-day trips x 3',
         destination: 'Popular Asian destinations',
         hotelPackage: '5-star hotel package',
-        color: Color(0xFF9BC1BC)),
+        color: AppColors.premiumEconClassColor),
     Plan(
         planName: 'Business',
         price: '19,200',
         trips: '4-day trips x 4',
         destination: 'Business destinations',
         hotelPackage: '5-star hotel package',
-        color: Color(0xFF9BC1BC)),
+        color: AppColors.businessClassColor),
   ];
 }

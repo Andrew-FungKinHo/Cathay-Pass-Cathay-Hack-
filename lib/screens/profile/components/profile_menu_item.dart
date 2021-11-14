@@ -31,14 +31,14 @@ class ProfileMenuItem extends StatelessWidget {
                 title,
                 style: TextStyle(
                   fontSize: defaultSize * 1.6, //16
-                  color: kTextLigntColor,
+                  color: AppColors.kTextLigntColor,
                 ),
               ),
               Spacer(),
               Icon(
                 Icons.arrow_forward_ios,
                 size: defaultSize * 1.6,
-                color: kTextLigntColor,
+                color: AppColors.kTextLigntColor,
               )
             ],
           ),
