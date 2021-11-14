@@ -127,7 +127,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                           color: Colors.green.shade50,
                           borderRadius: BorderRadius.circular(20),
                         ),
-                        child: Icon(Icons.flight_land, color: Colors.green),
+                        child: Icon(Icons.flight_land, color: AppColors.kTextLigntColor),
                       ),
                       SizedBox(
                         width: 10,

@@ -40,13 +40,13 @@ class _SubscriptionPlansState extends State<SubscriptionPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(subscriptionPlanList[index].planName,
-                                    style: TextStyle(fontSize: 24)),
+                                    style: TextStyle(fontSize: 24, color: Colors.white, fontWeight: FontWeight.w600)),
                                 SizedBox(
                                   height: 8,
                                 ),
                                 Text(
                                     "${r"$"}${subscriptionPlanList[index].price}/year",
-                                    style: TextStyle(fontSize: 18))
+                                    style: TextStyle(fontSize: 18, color: Colors.white))
                               ],
                             ),
                           );

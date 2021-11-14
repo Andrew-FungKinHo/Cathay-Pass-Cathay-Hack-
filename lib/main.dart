@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
           // backgroundColor: Colors.white,
           scaffoldBackgroundColor: Colors.white,
           primarySwatch: AppColors.primarySwatch,
+          fontFamily: 'OpenSans',
           // We apply this to our appBarTheme because most of our appBar have this style
           appBarTheme: AppBarTheme(color: Colors.white, elevation: 0),
           visualDensity: VisualDensity.adaptivePlatformDensity,
