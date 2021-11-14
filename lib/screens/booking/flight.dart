@@ -58,13 +58,31 @@ class _BookScreenState extends State<BookScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 // SizedBox(height: screenHeight * 0.01),
-                Text(
-                  '1 Adult                     Nov 18 - Nov 24',
-                  style: const TextStyle(
-                    color: Colors.white70,
-                    fontSize: 15.0,
-                  ),
-                ),
+                Row(
+                  children: [
+                    Text(
+                      '1 Adult',
+                      style: const TextStyle(
+                        color: Colors.white70,
+                        fontSize: 18.0,
+                      ),
+                    ),
+                    FloatingActionButton(
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                      mini: true,
+                      onPressed: () {},
+                      child: Icon(Icons.add),
+                    ),
+                    Text(
+                      '                 Nov 18 - Nov 24',
+                      style: const TextStyle(
+                        color: Colors.white70,
+                        fontSize: 18.0,
+                      ),
+                    ),
+                  ],
+                )
               ],
             )
           ],
@@ -102,8 +120,24 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                 Center(
                   child: Row(
                     children: [
-                      Center(
-                        child: Text('Flight'),
+                      Container(
+                        padding: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: Colors.green.shade50,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Icon(Icons.flight_land, color: Colors.green),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Flight",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.grey,
+                        ),
                       ),
                     ],
                   ),
@@ -309,15 +343,16 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                       builder: (context, constraints) {
                         return Flex(
                           children: List.generate(
-                              (constraints.constrainWidth() / 10).floor(),
-                              (index) => SizedBox(
-                                    height: 1,
-                                    width: 5,
-                                    child: DecoratedBox(
-                                      decoration: BoxDecoration(
-                                          color: Colors.grey.shade400),
-                                    ),
-                                  )),
+                            (constraints.constrainWidth() / 10).floor(),
+                            (index) => SizedBox(
+                              height: 1,
+                              width: 5,
+                              child: DecoratedBox(
+                                decoration:
+                                    BoxDecoration(color: Colors.grey.shade400),
+                              ),
+                            ),
+                          ),
                           direction: Axis.horizontal,
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -349,22 +384,16 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                     bottomRight: Radius.circular(24))),
             child: Row(
               children: <Widget>[
-                Container(
-                  padding: EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                      color: Colors.green.shade50,
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Icon(Icons.flight_land, color: Colors.green),
-                ),
-                SizedBox(
-                  width: 16,
-                ),
-                Text(
-                  "Cathay Pacific Airlines",
-                  style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey),
+                Expanded(
+                  child: Text(
+                    "Upgrade +\$200",
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
                 Expanded(
                   child: Text(
@@ -392,8 +421,103 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
               children: <Widget>[
                 Row(
                   children: [
-                    Center(
-                      child: Text('Insurance'),
+                    Container(
+                      padding: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        color: Colors.amber.shade50,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Icon(Icons.hotel, color: Colors.amber),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "hotel",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text('Star Hotel  2 nights'),
+                    Text('Singles Room (Basic)'),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.only(left: 16, right: 16, bottom: 12),
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(24),
+                    bottomRight: Radius.circular(24))),
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: Text(
+                    "Upgrade +\$200",
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Text(
+                    "Reselect",
+                    textAlign: TextAlign.end,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          SizedBox(height: screenHeight * 0.02),
+          // insurance page
+          Container(
+            padding: EdgeInsets.all(16),
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(24),
+                    topRight: Radius.circular(24))),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        color: Colors.blue.shade50,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Icon(Icons.health_and_safety, color: Colors.blue),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "Insurance",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey,
+                      ),
                     ),
                   ],
                 ),
@@ -413,6 +537,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
               ],
             ),
           ),
+          SizedBox(height: screenHeight * 0.02),
           FlatButton.icon(
             padding: const EdgeInsets.symmetric(
               vertical: 10.0,
@@ -424,7 +549,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
               borderRadius: BorderRadius.circular(30.0),
             ),
             icon: const Icon(
-              Icons.phone,
+              Icons.airplane_ticket,
               color: Colors.white,
             ),
             label: Text(
