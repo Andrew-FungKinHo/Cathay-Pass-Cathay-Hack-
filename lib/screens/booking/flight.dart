@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app/components/checkbox.dart';
 import 'package:recipe_app/components/custom_nav_bar.dart';
 import 'package:recipe_app/components/my_bottom_nav_bar.dart';
 
@@ -74,6 +75,7 @@ class _BookScreenState extends State<BookScreen> {
 }
 
 SliverToBoxAdapter _buildTicket(double screenHeight) {
+  bool isChecked = true;
   return SliverToBoxAdapter(
     child: Padding(
       padding: EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
@@ -81,9 +83,9 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Text(
-            '32 results',
+            'Recommended for you',
             style: const TextStyle(
-              fontSize: 22.0,
+              fontSize: 15.0,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -97,6 +99,15 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                     topRight: Radius.circular(24))),
             child: Column(
               children: <Widget>[
+                Center(
+                  child: Row(
+                    children: [
+                      Center(
+                        child: Text('Flight'),
+                      ),
+                    ],
+                  ),
+                ),
                 Row(
                   children: <Widget>[
                     Text(
@@ -353,7 +364,7 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
                 ),
                 Expanded(
                   child: Text(
-                    "\u0024 240",
+                    "Reselect",
                     textAlign: TextAlign.end,
                     style: TextStyle(
                       fontSize: 18,
@@ -366,6 +377,38 @@ SliverToBoxAdapter _buildTicket(double screenHeight) {
             ),
           ),
           SizedBox(height: screenHeight * 0.02),
+          Container(
+            padding: EdgeInsets.all(16),
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(24),
+                    topRight: Radius.circular(24))),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: [
+                    Center(
+                      child: Text('Insurance'),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      "Your trip is protected by CHUBB",
+                      style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    MyStatefulWidget(),
+                  ],
+                ),
+              ],
+            ),
+          ),
           FlatButton.icon(
             padding: const EdgeInsets.symmetric(
               vertical: 10.0,
