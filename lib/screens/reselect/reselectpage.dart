@@ -17,7 +17,7 @@ class ReselectPage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 16,),
-            Align(child: Text('Your original booking is delayed', style: TextStyle(fontSize: 20),), alignment: Alignment.centerLeft,),
+            Align(child: Text('Your original bookings', style: TextStyle(fontSize: 20),), alignment: Alignment.centerLeft,),
             SizedBox(height: 16,),
             Container(
               padding: EdgeInsets.all(16),
@@ -245,7 +245,7 @@ class ReselectPage extends StatelessWidget {
                   SizedBox(width: 16,),
                   Icon(Icons.warning_rounded, color: Color(0xFFFD2F22),),
                   SizedBox(width: 16,),
-                  Flexible(child: Text('Warning: reschedule needed' , maxLines: 4, overflow: TextOverflow.ellipsis,)),
+                  Flexible(child: Text('Your travel plan has been rescheduled due to a flight delay. Please confirm changes.' , maxLines: 4, overflow: TextOverflow.ellipsis,)),
                   SizedBox(width: 8,)
                 ],
               ),
@@ -254,9 +254,9 @@ class ReselectPage extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(vertical: 4, horizontal: 16),
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: AppColors.kPrimaryColor),
-              child: TextButton(child: Text('Reselect flight', style: TextStyle(color: Colors.white,),), onPressed: () {},),
+              child: TextButton(child: Text('Confirm', style: TextStyle(color: Colors.white,),), onPressed: () {},),
             ),
-            // TextButton(child: Text('or Reselect'), onPressed: () {},),
+            TextButton(child: Text('or Reselect'), onPressed: () {},),
           ],
         ),
       ),
